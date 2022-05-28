@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import Starships from "./components/Starships";
+// import { useState, useEffect } from "react";
+import ShipDisplay from "./components/ShipDisplay";
+import './styles.scss'
+import Header from "./components/Header";
 function App() {
-  return (
+//   const [ships, setShips] = useState();
+
+//   // async/await takes care of itself
+//   const getShip = async () => {
+//     // making api Call
+//     const response = await fetch(`https://swapi.dev/api/starships`);
+//     // converting the response to js object
+//     const data = await response.json();
+//     // updating the state to the object
+//     // console.log(data);
+
+//     setShips(data);
+//   };
+    
+
+// // renders when page loads
+//   useEffect(() => {
+//     getShip();
+//   }, []);
+
+  
+// // we must wait for the Promise to clear before attempting to run anything on it.
+// // before it hits this if it's probably null or undefined
+//   if (ships) {
+//     var shipSet = ships.results.map((ship,index) => {
+//       console.log(ship.crew)
+//       return <Starships name={ship.name} make={ship.manufacturer} crew={ship.crew} key={index}/>
+//     //  var shipSet = <ShipDisplay data={ships} />
+  
+//     })
+//     } else {
+//   return "Howdy Partner"
+// }
+// app display
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <ShipDisplay className="ships-container"/>
     </div>
-  );
+  )
+
+
+
 }
 
 export default App;
